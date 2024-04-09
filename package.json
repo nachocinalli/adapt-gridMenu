@@ -1,0 +1,18 @@
+{
+  "name": "adapt-gridMenu",
+  "version": "1.0.0",
+  "framework": ">=5.24.2",
+  "homepage": "",
+  "bugs": "",
+  "menu": "gridMenu",
+  "displayName": "Grid Menu",
+  "description": "A grid menu",
+  "main": "js/adapt-gridMenu.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-menu"
+  ],
+  "license": "GPL-3.0",
+  "targetAttribute": "_gridMenu",
+  "private": true
+}

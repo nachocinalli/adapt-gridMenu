@@ -1,0 +1,366 @@
+{
+  "$anchor": "gridMenu-course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "course"
+    },
+    "with": {
+      "properties": {
+        "_globals": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "_menu": {
+              "type": "object",
+              "default": {},
+              "properties": {
+                "_gridMenu": {
+                  "type": "object",
+                  "title": "Grid Menu",
+                  "default": {},
+                  "properties": {
+                    "itemCount": {
+                      "type": "string",
+                      "title": "Item count label",
+                      "default": "Item {{_nthChild}} of {{_totalChild}}",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "durationLabel": {
+                      "type": "string",
+                      "title": "Duration label",
+                      "default": "Duration:",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_gridMenu": {
+          "type": "object",
+          "title": "Grid Menu",
+          "default": {},
+          "properties": {
+            "_graphic": {
+              "type": "object",
+              "title": "Menu logo image",
+              "default": {},
+              "properties": {
+                "_src": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Source",
+                  "description": "This image will appear above the menu page title",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alternative text",
+                  "description": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank",
+                  "default": "",
+                  "_adapt": {
+                    "translatable": true
+                  }
+                }
+              }
+            },
+            "_backgroundImage": {
+              "type": "object",
+              "title": "Background image",
+              "default": {},
+              "properties": {
+                "_xlarge": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Extra large",
+                  "description": "Extra large background image, e.g. hd laptop/desktop computers",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "_large": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Large",
+                  "description": "Large background image, e.g. laptop/desktop computers",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "_medium": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Medium",
+                  "description": "Medium background image, e.g. tablet devices",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                },
+                "_small": {
+                  "type": "string",
+                  "isObjectId": true,
+                  "title": "Small",
+                  "description": "Small background image, e.g. mobile / cellphones",
+                  "_backboneForms": {
+                    "type": "Asset",
+                    "media": "image"
+                  }
+                }
+              }
+            },
+            "_backgroundStyles": {
+              "type": "object",
+              "title": "Background image styles",
+              "default": {},
+              "properties": {
+                "_backgroundRepeat": {
+                  "type": "string",
+                  "title": "Repeat",
+                  "description": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically",
+                  "default": "",
+                  "enum": [
+                    "",
+                    "repeat",
+                    "repeat-x",
+                    "repeat-y",
+                    "no-repeat"
+                  ],
+                  "_backboneForms": "Select"
+                },
+                "_backgroundSize": {
+                  "type": "string",
+                  "title": "Size",
+                  "description": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible",
+                  "default": "",
+                  "enum": [
+                    "",
+                    "auto",
+                    "cover",
+                    "contain"
+                  ],
+                  "_backboneForms": "Select"
+                },
+                "_backgroundPosition": {
+                  "type": "string",
+                  "title": "Position",
+                  "description": "The first value is the horizontal position and the second value is the vertical",
+                  "default": "",
+                  "enum": [
+                    "",
+                    "left top",
+                    "left center",
+                    "left bottom",
+                    "center top",
+                    "center center",
+                    "center bottom",
+                    "right top",
+                    "right center",
+                    "right bottom"
+                  ],
+                  "_backboneForms": "Select"
+                }
+              }
+            },
+            "_menuHeader": {
+              "type": "object",
+              "title": "Header",
+              "default": {},
+              "properties": {
+                "_textAlignment": {
+                  "type": "object",
+                  "title": "Text alignment",
+                  "default": {},
+                  "properties": {
+                    "_title": {
+                      "type": "string",
+                      "title": "Title alignment",
+                      "description": "Set the alignment of the menu title. Left: Aligns the title to the left of the container. Center: Aligns the title to the center of the container. Right: Aligns the title to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "left",
+                        "center",
+                        "right"
+                      ],
+                      "_backboneForms": "Select"
+                    },
+                    "_body": {
+                      "type": "string",
+                      "title": "Body alignment",
+                      "description": "Set the alignment of the menu body. Left: Aligns the body to the left of the container. Center: Aligns the body to the center of the container. Right: Aligns the body to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "left",
+                        "center",
+                        "right"
+                      ],
+                      "_backboneForms": "Select"
+                    },
+                    "_instruction": {
+                      "type": "string",
+                      "title": "Instruction alignment",
+                      "description": "Set the alignment of the menu instruction. Left: Aligns the instruction to the left of the container. Center: Aligns the instruction to the center of the container. Right: Aligns the instruction to the right of the container. The alignment automatically inverses for right-to-left languages. The default is `` which inherits the natural page direction.",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "left",
+                        "center",
+                        "right"
+                      ],
+                      "_backboneForms": "Select"
+                    }
+                  }
+                },
+                "_backgroundImage": {
+                  "type": "object",
+                  "title": "Header background image",
+                  "default": {},
+                  "properties": {
+                    "_xlarge": {
+                      "type": "string",
+                      "isObjectId": true,
+                      "title": "Extra large",
+                      "description": "Extra large background image, e.g. hd laptop/desktop computers",
+                      "_backboneForms": {
+                        "type": "Asset",
+                        "media": "image"
+                      }
+                    },
+                    "_large": {
+                      "type": "string",
+                      "isObjectId": true,
+                      "title": "Large",
+                      "description": "Large background image, e.g. laptop/desktop computers",
+                      "_backboneForms": {
+                        "type": "Asset",
+                        "media": "image"
+                      }
+                    },
+                    "_medium": {
+                      "type": "string",
+                      "isObjectId": true,
+                      "title": "Medium",
+                      "description": "Medium background image, e.g. tablet devices",
+                      "_backboneForms": {
+                        "type": "Asset",
+                        "media": "image"
+                      }
+                    },
+                    "_small": {
+                      "type": "string",
+                      "isObjectId": true,
+                      "title": "Small",
+                      "description": "Small background image, e.g. mobile / cellphones",
+                      "_backboneForms": {
+                        "type": "Asset",
+                        "media": "image"
+                      }
+                    }
+                  }
+                },
+                "_backgroundStyles": {
+                  "type": "object",
+                  "title": "Header background image styles",
+                  "default": {},
+                  "properties": {
+                    "_backgroundRepeat": {
+                      "type": "string",
+                      "title": "Repeat",
+                      "description": "Repeat-x: The background image is repeated only horizontally. Repeat-y: The background image is repeated only vertically",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "repeat",
+                        "repeat-x",
+                        "repeat-y",
+                        "no-repeat"
+                      ],
+                      "_backboneForms": "Select"
+                    },
+                    "_backgroundSize": {
+                      "type": "string",
+                      "title": "Size",
+                      "description": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "auto",
+                        "cover",
+                        "contain"
+                      ],
+                      "_backboneForms": "Select"
+                    },
+                    "_backgroundPosition": {
+                      "type": "string",
+                      "title": "Position",
+                      "description": "The first value is the horizontal position and the second value is the vertical",
+                      "default": "",
+                      "enum": [
+                        "",
+                        "left top",
+                        "left center",
+                        "left bottom",
+                        "center top",
+                        "center center",
+                        "center bottom",
+                        "right top",
+                        "right center",
+                        "right bottom"
+                      ],
+                      "_backboneForms": "Select"
+                    }
+                  }
+                },
+                "_minimumHeights": {
+                  "type": "object",
+                  "title": "Header minimum height",
+                  "default": {},
+                  "properties": {
+                    "_xlarge": {
+                      "type": "number",
+                      "title": "Extra Large",
+                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
+                      "default": 0
+                    },
+                    "_large": {
+                      "type": "number",
+                      "title": "Large",
+                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
+                      "default": 0
+                    },
+                    "_medium": {
+                      "type": "number",
+                      "title": "Medium",
+                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
+                      "default": 0
+                    },
+                    "_small": {
+                      "type": "number",
+                      "title": "Small",
+                      "description": "Minimum height should only be used in instances where the menu header height needs to be greater than the content e.g. to prevent a background image being cropped",
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
